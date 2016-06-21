@@ -8,6 +8,9 @@ syntax enable
 set tabstop=4
 set softtabstop=4 " number of spaces in tab
 set expandtab " tabs are spaces
+set shiftwidth=4 
+set list lcs=eol:¬,trail:·,tab:▸\ 
+autocmd FileType php setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " UI Layout ----------------------------------
 set number
@@ -15,6 +18,16 @@ set cursorline
 filetype indent on
 set wildmenu " visual autocomplete for command menu
 set showmatch " match parenthesis and brackets
+set history=50 " keep 50 lines of cmd line history
+set ruler " show cursor at all times
+set showcmd " display incomplete commands
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+      syntax on
+        set hlsearch
+    endif
+
 
 " Searching ----------------------------------
 set incsearch "search as characters are entered
@@ -37,6 +50,10 @@ nnoremap k gk
 " Powerline ----------------------------------
 
 " CtrlP --------------------------------------
+let mapleader=" "
+vnoremap <Leader>y "+y
+nnoremap <Leader>p "+p
+vnoremap <Leader>p "+p
 
 " NERDTree -----------------------------------
 

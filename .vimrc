@@ -11,11 +11,13 @@ set expandtab " tabs are spaces
 set shiftwidth=4 
 set list lcs=eol:¬,trail:·,tab:▸\ 
 autocmd FileType php setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd BufNewFile,BufRead *.twig set syntax=html
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " UI Layout ----------------------------------
 set number
 set cursorline
-filetype indent on
+filetype plugin indent on
 set wildmenu " visual autocomplete for command menu
 set showmatch " match parenthesis and brackets
 set history=50 " keep 50 lines of cmd line history
@@ -28,6 +30,9 @@ if &t_Co > 2 || has("gui_running")
         set hlsearch
     endif
 
+" PHP Options --------------------------------
+"let g:php_syntax_extensions_enabled = 1
+"let b:php_syntax_extensions_enabled = 1
 
 " Searching ----------------------------------
 set incsearch "search as characters are entered
@@ -60,6 +65,7 @@ vnoremap <Leader>p "+p
 " Syntastic ----------------------------------
 
 " Launch Config ------------------------------
+execute pathogen#infect()
 
 " Backups ------------------------------------
 set backup

@@ -51,6 +51,7 @@ nnoremap k gk
 " Line Shortcuts -----------------------------
 
 " Leader Shortcuts ---------------------------
+cmap w!! w !sudo tee > /dev/null %
 
 " Powerline ----------------------------------
 

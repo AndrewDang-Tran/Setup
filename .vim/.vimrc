@@ -1,5 +1,5 @@
 " Colors -------------------------------------
-colorscheme vividchalk "install color scheme
+colorscheme OceanicNext "install color scheme
 syntax enable
 
 " Misc ---------------------------------------
@@ -23,12 +23,6 @@ set showmatch " match parenthesis and brackets
 set history=50 " keep 50 lines of cmd line history
 set ruler " show cursor at all times
 set showcmd " display incomplete commands
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-      syntax on
-        set hlsearch
-    endif
 
 " PHP Options --------------------------------
 "let g:php_syntax_extensions_enabled = 1
@@ -57,9 +51,9 @@ cmap w!! w !sudo tee > /dev/null %
 
 " CtrlP --------------------------------------
 let mapleader=" "
-vnoremap <Leader>y "+y
-nnoremap <Leader>p "+p
-vnoremap <Leader>p "+p
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
 
 " NERDTree -----------------------------------
 

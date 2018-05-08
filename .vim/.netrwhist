@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/etc/apache2/sites-available'
 let g:netrw_dirhist_2='/home/andrew/Programming/wizehire/application/views/jobwizard'
 let g:netrw_dirhist_3='/home/andrew/Programming/wizehire/tests/acceptance'
+let g:netrw_dirhist_4='/home/andrew/.gnome2'
+let g:netrw_dirhist_5='/home/andrew/.vim'

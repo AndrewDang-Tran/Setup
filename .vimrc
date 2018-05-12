@@ -1,6 +1,15 @@
+" Setup vim plugin manager ------------------
+call plug#begin('~/.vim/plugged')
+
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+call plug#end()
+
 " Colors -------------------------------------
-colorscheme OceanicNext "install color scheme
+set t_Co=256
 syntax enable
+colorscheme OceanicNext "install color scheme
 
 " Misc ---------------------------------------
 
@@ -13,6 +22,7 @@ set list lcs=eol:¬,trail:·,tab:▸\
 autocmd FileType php setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.twig set syntax=html
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType js setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " UI Layout ----------------------------------
 set number

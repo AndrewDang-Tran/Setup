@@ -72,6 +72,9 @@ vnoremap <leader>p "+p
 " Launch Config ------------------------------
 execute pathogen#infect()
 
+" in insert mode, "ts" -> "2018-08-03"
+iab <expr> ts strftime("%F")
+
 " Backups ------------------------------------
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp

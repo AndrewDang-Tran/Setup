@@ -3,5 +3,6 @@
     email = andrewdt1506@gmail.com
 [core]
     editor = vim
+    excludesfile = ~/.gitignore
 [alias]
 

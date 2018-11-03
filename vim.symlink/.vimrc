@@ -13,6 +13,9 @@ colorscheme OceanicNext "install color scheme
 
 " Misc ---------------------------------------
 
+" Buffers ------------------------------------
+"set hidden " allows switching between buffers without saving or forgetting changes
+
 " Spaces & Tabs ------------------------------
 set tabstop=4
 set softtabstop=4 " number of spaces in tab

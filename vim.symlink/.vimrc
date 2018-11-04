@@ -13,6 +13,9 @@ colorscheme OceanicNext "install color scheme
 
 " Misc ---------------------------------------
 
+" Buffers ------------------------------------
+"set hidden " allows switching between buffers without saving or forgetting changes
+
 " Spaces & Tabs ------------------------------
 set tabstop=4
 set softtabstop=4 " number of spaces in tab
@@ -70,7 +73,6 @@ vnoremap <leader>p "+p
 " Syntastic ----------------------------------
 
 " Launch Config ------------------------------
-execute pathogen#infect()
 
 " in insert mode, "ts" -> "2018-08-03"
 iab <expr> ts strftime("%F")

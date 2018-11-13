@@ -11,10 +11,6 @@ import sys
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 
-cmd = ['pwd']
-output = subprocess.Popen( cmd, stdout=subprocess.PIPE ).communicate()[0]
-eprint(output)
-
 def search(url, query): 
     searchUrl = url + query
     eprint(searchUrl)

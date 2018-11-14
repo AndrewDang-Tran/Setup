@@ -1,12 +1,20 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
+from __future__ import print_function
+from pprint import pprint
 import json
 import webbrowser
 import sys
-from pprint import pprint
+import subprocess
+import sys
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
 
 def search(url, query): 
-    goto(url + query)
+    searchUrl = url + query
+    eprint(searchUrl)
+    goto(searchUrl)
 
 def goto(url):
     webbrowser.open_new_tab(url)
@@ -14,15 +22,26 @@ def goto(url):
 
 scriptName = sys.argv[0]
 scriptNameLength = len(scriptName)
-scriptName = scriptName[2:scriptNameLength-3]
-print(scriptName)
+if scriptName.startswith('./'):
+    scriptName = scriptName[2:scriptNameLength-3]
+elif '/' in scriptName:
+    paths = scriptName.split('/')  
+    scriptName = paths[len(paths) - 1]
+    scriptNameLength = len(scriptName)
+    scriptName = scriptName[0:scriptNameLength-3]
+else:
+    scriptName = scriptName[0:scriptNameLength-3]
+
 query = ''
 if len(sys.argv) > 1:
     query = sys.argv[1]
 
-with open('search.json') as searchData:
+eprint('scriptName: ' + scriptName)
+eprint('query: ' + query)
+
+with open('/Users/andrewd/.alfred/search/search.json') as searchData:
     searchJson = json.load(searchData)
-    pprint(searchJson)
+    eprint(searchJson)
 
 searchMap = searchJson[scriptName]
 

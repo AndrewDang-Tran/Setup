@@ -14,6 +14,5 @@ sudo apt-get install vim-gtk
 	* android messages plugin https://github.com/michaelsouellette/recipe-androidMessages
 * Alfred
     * Calendar workflow - https://github.com/deanishe/alfred-gcal
-    * todoist workflow - https://github.com/moranje/alfred-workflow-todoist
 
 #### Phone Applications

@@ -26,6 +26,7 @@ autocmd FileType php setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.twig set syntax=html
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType js setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType tex setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " UI Layout ----------------------------------
 set number

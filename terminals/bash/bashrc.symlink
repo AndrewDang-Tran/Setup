@@ -5,7 +5,6 @@
 #Aliases
 function generateCDAliases() {
     local baseDir=$1
-    eval "ls $baseDir"
     if [ -d $baseDir ];
     then
         for directory in $baseDir/*;

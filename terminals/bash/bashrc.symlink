@@ -3,8 +3,25 @@
 # for examples
 
 #Aliases
-alias toggl="cd ~/workspace/toggl-scripts"
-alias todoist="cd ~/workspace/todoist-templates"
+function generateCDAliases() {
+    local baseDir=$1
+    eval "ls $baseDir"
+    if [ -d $baseDir ];
+    then
+        for directory in $baseDir/*;
+        do
+            if [ -d $directory ];
+            then
+                local dirName="${directory##*/}"
+                local aliasString="alias $dirName='cd $directory'"
+                eval ${aliasString}
+            fi
+        done
+    fi
+}
+
+generateCDAliases '/home/andrew/workspace'
+
 
 # Set default editor
 export VISUAL=vim

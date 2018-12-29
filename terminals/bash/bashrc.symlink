@@ -7,6 +7,9 @@ function generateCDAliases() {
     local baseDir=$1
     if [ -d $baseDir ];
     then
+        local baseDirName="${baseDir##*/}"
+        local lsString="alias $baseDirName='ls $baseDirName'"
+        eval ${lsString}
         for directory in $baseDir/*;
         do
             if [ -d $directory ];

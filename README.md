@@ -6,13 +6,20 @@ Run the `setup.sh` script to symlink all configuration files
 * Dark Reader
 * EditThisCookie
 
+#### Move to Firefox in progress?
+* TreeTabs
+    * [Remove top tabs](https://medium.com/@Aenon/firefox-hide-native-tabs-and-titlebar-f0b00bdbb88b)
+
 #### Commands not in setup.sh yet
 sudo apt-get install vim-gtk
 
 #### Applications
 * Franz
-	* android messages plugin https://github.com/michaelsouellette/recipe-androidMessages
 * Alfred
     * Calendar workflow - https://github.com/deanishe/alfred-gcal
 
 #### Phone Applications
+* todoist
+* anki
+* podcast addict
+* [tachiyomi](https://github.com/inorichi/tachiyomi)

@@ -2,3 +2,6 @@
 *.swp
 *.netrwhist
 .DS_Store
+.classpath
+.factorypath
+.settings

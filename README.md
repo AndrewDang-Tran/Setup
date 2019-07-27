@@ -13,10 +13,14 @@ Run the `setup.sh` script to symlink all configuration files
 #### Commands not in setup.sh yet
 sudo apt-get install vim-gtk
 
+homebrew - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 #### Applications
 * Franz
 * Alfred
     * Calendar workflow - https://github.com/deanishe/alfred-gcal
+* [iTerm](https://www.iterm2.com/)
+* [zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 #### Phone Applications
 * todoist

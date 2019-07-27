@@ -12,6 +12,7 @@ Run the `setup.sh` script to symlink all configuration files
 
 #### Commands not in setup.sh yet
 sudo apt-get install vim-gtk
+
 homebrew - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #### Applications

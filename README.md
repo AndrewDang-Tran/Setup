@@ -17,6 +17,7 @@ sudo apt-get install vim-gtk
 * Franz
 * Alfred
     * Calendar workflow - https://github.com/deanishe/alfred-gcal
+* [iTerm] (https://www.iterm2.com/)
 
 #### Phone Applications
 * todoist

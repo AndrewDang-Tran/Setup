@@ -17,16 +17,17 @@ colorscheme OceanicNext "install color scheme
 "set hidden " allows switching between buffers without saving or forgetting changes
 
 " Spaces & Tabs ------------------------------
-set tabstop=4
-set softtabstop=4 " number of spaces in tab
+set tabstop=2
+set softtabstop=2 " number of spaces in tab
 set expandtab " tabs are spaces
-set shiftwidth=4 
+set shiftwidth=2 
 set list lcs=eol:¬,trail:·,tab:▸\ 
 autocmd FileType php setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.twig set syntax=html
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType js setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType tex setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType rb setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " UI Layout ----------------------------------
 set number
@@ -37,6 +38,7 @@ set showmatch " match parenthesis and brackets
 set history=50 " keep 50 lines of cmd line history
 set ruler " show cursor at all times
 set showcmd " display incomplete commands
+setl tw=180 " set max # characters in a line to 120
 
 " PHP Options --------------------------------
 "let g:php_syntax_extensions_enabled = 1
@@ -55,6 +57,9 @@ set foldmethod=indent " fold based on indents
 "  move through lines visually
 nnoremap j gj 
 nnoremap k gk
+
+" Formatting Shortcuts -----------------------
+com! FormatJSON %!python -m json.tool
 
 " Line Shortcuts -----------------------------
 
@@ -82,6 +87,7 @@ iab <expr> ts strftime("%F")
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
+set undodir=~/.vim/undodir
 set directory=.,$TEMP
 set writebackup
 

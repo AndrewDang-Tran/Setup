@@ -6,5 +6,8 @@
 .factorypath
 .settings
 .project
+.idea
+npm-error.log
+yarn-error.log
 node_modules
 bin/

@@ -39,7 +39,7 @@ if len(sys.argv) > 1:
 eprint('scriptName: ' + scriptName)
 eprint('query: ' + query)
 
-with open('/Users/andrewd/.alfred/search/search.json') as searchData:
+with open('/Users/i510691/.alfred/search/search.json') as searchData:
     searchJson = json.load(searchData)
     eprint(searchJson)
 

@@ -131,6 +131,7 @@ install_mac_applications () {
         firefox
         iterm2
         anki
+        notion
     )
 
     inform "Installing cask apps..."

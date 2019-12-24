@@ -5,11 +5,11 @@ DOTFILES_ROOT=$(pwd)
 set -e
 
 inform () {
-    printf "  [ \033[00;34m..\033[0m ] $1"
+    printf "  [ \033[00;34m..\033[0m ] $1\n"
 }
 
 user () {
-    printf "\r  [ \033[0;33m?\033[0m ] $1 "
+    printf "\r  [ \033[0;33m?\033[0m ] $1 \n"
 }
 
 success () {
@@ -109,4 +109,56 @@ install_dotfiles () {
     done
 }
 
-install_dotfiles
+install_mac_applications () {
+    if test ! $(which brew); then
+        inform "Installing homebrew..."
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    inform "Homebrew update..."
+    brew update
+
+    MAC_PACKAGES=(
+        vim
+    )
+
+    inform "Installing packages..."
+    brew install "${MAC_PACKAGES[@]}"
+
+    CASKS=(
+        spectacle
+        alfred
+        firefox
+        iterm2
+    )
+
+    inform "Installing cask apps..."
+    brew cask install ${CASKS[@]}
+}
+
+install_applications () {
+    local platform="$OSTYPE"
+    inform "Installing applications dependent on platform..."
+    if [[ "$platform" == "linux-gnu" ]]; then
+        inform "linux"
+    elif [[ "$platform" == "darwin"* ]]; then
+        inform "osx"
+        install_mac_applications
+    elif [[ "$platform" == "cygwin" ]]; then
+        inform "windows cygwin"
+    elif [[ "$platform" == "msys" ]]; then
+        inform "msys"
+        # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+    elif [[ "$platform" == "freebsd"* ]]; then
+        inform "freebsd"
+    else
+        fail "unknown operating system platform"
+    fi
+}
+
+setup () {
+    install_dotfiles
+    install_applications
+}
+
+setup

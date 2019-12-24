@@ -110,6 +110,10 @@ install_dotfiles () {
 }
 
 install_mac_applications () {
+    if test ! $(which zsh); then
+        inform "Installing zsh..."
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    fi
     if test ! $(which brew); then
         inform "Installing homebrew..."
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

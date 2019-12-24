@@ -130,6 +130,7 @@ install_mac_applications () {
         alfred
         firefox
         iterm2
+        anki
     )
 
     inform "Installing cask apps..."

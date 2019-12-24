@@ -136,6 +136,12 @@ install_mac_applications () {
     brew cask install ${CASKS[@]}
 }
 
+setup_firefox_for_mac() {
+    FIREFOX_DEFAULT_PROFILE=$(ls "$HOME/Library/Application Support/Firefox/Profiles/" | grep default-release)
+    mkdir -p "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome"
+    ln -s "$DOTFILES_ROOT/firefox/userChrome.css" "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome/userChrome.css"
+}
+
 install_applications () {
     local platform="$OSTYPE"
     inform "Installing applications dependent on platform..."
@@ -144,6 +150,7 @@ install_applications () {
     elif [[ "$platform" == "darwin"* ]]; then
         inform "osx"
         install_mac_applications
+        setup_firefox_for_mac
     elif [[ "$platform" == "cygwin" ]]; then
         inform "windows cygwin"
     elif [[ "$platform" == "msys" ]]; then

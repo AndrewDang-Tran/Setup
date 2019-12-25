@@ -1,10 +1,29 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+function generateCDAliases() {
+    local baseDir=$1
+    if [ -d $baseDir ];
+    then
+        local baseDirName="${baseDir##*/}"
+        eval ${lsString}
+        for directory in $baseDir/*;
+        do
+            if [ -d $directory ];
+            then
+                local dirName="${directory##*/}"
+                local aliasString="alias $dirName='cd $directory'"
+                eval ${aliasString}
+            fi
+        done
+    fi
+}
+
+generateCDAliases "$HOME/workspace"
+
 # Overwriting bash commands to be more useful
 alias grep='grep --color=auto'
 alias py='python3'
-
 ## MAC Specific aliases
 alias mac-disable-screen='sudo nvram boot-args="niog=1"'
 alias mac-disable-screen-reset='sudo nvram -d boot-args'

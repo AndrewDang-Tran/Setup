@@ -136,6 +136,7 @@ install_mac_applications () {
         iterm2
         anki
         notion
+        flux
     )
 
     inform "Installing cask apps..."
@@ -143,9 +144,17 @@ install_mac_applications () {
 }
 
 setup_firefox_for_mac() {
+    inform "Setting up firefox for mac..."
     FIREFOX_DEFAULT_PROFILE=$(ls "$HOME/Library/Application Support/Firefox/Profiles/" | grep default-release)
     mkdir -p "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome"
     ln -s "$DOTFILES_ROOT/firefox/userChrome.css" "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome/userChrome.css"
+}
+
+setup_anki_for_mac() {
+    inform "Setting up anki for mac..."
+    defaults write net.ankiweb.dtop NSAppSleepDisabled -bool true
+    defaults write net.ichi2.anki NSAppSleepDisabled -bool true
+    defaults write org.qt-project.Qt.QtWebEngineCore NSAppSleepDisabled -bool true
 }
 
 install_applications () {
@@ -157,6 +166,7 @@ install_applications () {
         inform "osx"
         install_mac_applications
         setup_firefox_for_mac
+        setup_anki_for_mac
     elif [[ "$platform" == "cygwin" ]]; then
         inform "windows cygwin"
     elif [[ "$platform" == "msys" ]]; then

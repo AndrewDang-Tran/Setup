@@ -137,6 +137,7 @@ install_mac_applications () {
         anki
         notion
         flux
+        karabiner-elements
     )
 
     inform "Installing cask apps..."

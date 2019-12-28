@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# directory moving alias
 function generateCDAliases() {
     local baseDir=$1
     if [ -d $baseDir ];
@@ -18,20 +19,22 @@ function generateCDAliases() {
         done
     fi
 }
-
 generateCDAliases "$HOME/workspace"
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # Overwriting bash commands to be more useful
 alias grep='grep --color=auto'
 alias py='python3'
+
 ## MAC Specific aliases
 alias mac-disable-screen='sudo nvram boot-args="niog=1"'
 alias mac-disable-screen-reset='sudo nvram -d boot-args'
 alias mac-shutdown='sudo shutdown -r now'
 alias mac-screensaver='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 alias mac-suspend='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-
-# directory moving alias
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/andrew/.oh-my-zsh

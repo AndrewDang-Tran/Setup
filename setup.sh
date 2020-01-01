@@ -151,13 +151,6 @@ setup_firefox_for_mac() {
     ln -s "$DOTFILES_ROOT/firefox/userChrome.css" "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome/userChrome.css"
 }
 
-setup_anki_for_mac() {
-    inform "Setting up anki for mac..."
-    defaults write net.ankiweb.dtop NSAppSleepDisabled -bool true
-    defaults write net.ichi2.anki NSAppSleepDisabled -bool true
-    defaults write org.qt-project.Qt.QtWebEngineCore NSAppSleepDisabled -bool true
-}
-
 install_applications () {
     local platform="$OSTYPE"
     inform "Installing applications dependent on platform..."
@@ -167,7 +160,6 @@ install_applications () {
         inform "osx"
         install_mac_applications
         setup_firefox_for_mac
-        setup_anki_for_mac
     elif [[ "$platform" == "cygwin" ]]; then
         inform "windows cygwin"
     elif [[ "$platform" == "msys" ]]; then

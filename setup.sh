@@ -138,6 +138,7 @@ install_mac_applications () {
         notion
         flux
         karabiner-elements
+        intellij-idea
     )
 
     inform "Installing cask apps..."

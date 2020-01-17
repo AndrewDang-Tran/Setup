@@ -49,6 +49,9 @@ setl tw=180 " set max # characters in a line to 120
 set incsearch "search as characters are entered
 set hlsearch
 
+" Deleting -----------------------------------
+set backspace=indent,eol,start
+
 " Folding ------------------------------------
 set foldenable
 set foldlevelstart=10 " opens most folds depending on line size

@@ -139,6 +139,7 @@ install_mac_applications () {
         flux
         karabiner-elements
         intellij-idea
+        postman
     )
 
     inform "Installing cask apps..."

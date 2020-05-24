@@ -11,3 +11,4 @@ npm-error.log
 yarn-error.log
 node_modules
 bin/
+.gradle

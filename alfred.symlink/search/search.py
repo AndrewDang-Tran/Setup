@@ -7,6 +7,9 @@ import webbrowser
 import sys
 import subprocess
 import sys
+import os
+
+HOME = os.getenv('HOME')
 
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
@@ -39,7 +42,7 @@ if len(sys.argv) > 1:
 eprint('scriptName: ' + scriptName)
 eprint('query: ' + query)
 
-with open('/Users/i510691/.alfred/search/search.json') as searchData:
+with open(HOME + '/.alfred/search/search.json') as searchData:
     searchJson = json.load(searchData)
     eprint(searchJson)
 

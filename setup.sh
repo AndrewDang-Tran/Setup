@@ -127,7 +127,7 @@ install_mac_applications () {
     )
 
     inform "Installing packages..."
-    brew install "${MAC_PACKAGES[@]}"
+    brew list "${MAC_PACKAGES[@]}" &>/dev/null || brew install "${MAC_PACKAGES[@]}"
 
     CASKS=(
         spectacle
@@ -143,7 +143,7 @@ install_mac_applications () {
     )
 
     inform "Installing cask apps..."
-    brew cask install ${CASKS[@]}
+    brew cask list "${CASK[@]}" &>/dev/null || brew cask install "${CASKS[@]}"
 }
 
 setup_firefox_for_mac() {

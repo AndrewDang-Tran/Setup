@@ -24,6 +24,8 @@ function generateCDAliases() {
 
 generateCDAliases '/home/andrew/workspace'
 
+# Add shell completion
+eval "$(pipenv --completion)"
 
 # Set default editor
 export VISUAL=vim

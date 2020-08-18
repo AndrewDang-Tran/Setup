@@ -124,6 +124,7 @@ install_mac_applications () {
 
     MAC_PACKAGES=(
         vim
+        python
     )
 
     inform "Installing packages..."
@@ -140,10 +141,18 @@ install_mac_applications () {
         karabiner-elements
         intellij-idea
         postman
+        franz
+        mactex-no-gui
     )
 
     inform "Installing cask apps..."
-    brew cask list "${CASK[@]}" &>/dev/null || brew cask install "${CASKS[@]}"
+    inform "${CASKS[@]}..."
+    brew cask list "${CASKS[@]}" &>/dev/null || brew cask install "${CASKS[@]}"
+    install_non_brew_applications
+}
+
+install_non_brew_applications() {
+    pip3 install pipenv
 }
 
 setup_firefox_for_mac() {

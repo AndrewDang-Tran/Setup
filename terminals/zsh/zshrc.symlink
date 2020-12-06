@@ -28,7 +28,7 @@ bindkey '^e' edit-command-line
 # Overwriting bash commands to be more useful
 alias grep='grep --color=auto'
 alias pip='pip3'
-alias py='python3'
+alias python='python3'
 
 ## MAC Specific aliases
 alias mac-disable-screen='sudo nvram boot-args="niog=1"'

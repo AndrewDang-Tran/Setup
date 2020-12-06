@@ -102,7 +102,7 @@ install_dotfiles () {
 
     local overwrite_all=false backup_all=false skip_all=false
 
-    for src in $(find "$DOTFILES_ROOT/" -maxdepth 3 -name '*.symlink')
+    for src in $(find "$DOTFILES_ROOT" -maxdepth 3 -name '*.symlink')
     do
         dst="$HOME/.$(basename "${src%.*}")"
         link_file "$src" "$dst"
@@ -124,7 +124,9 @@ install_mac_applications () {
 
     MAC_PACKAGES=(
         vim
-        python
+        pyenv
+        python@3.8
+        pipenv
     )
 
     inform "Installing packages..."
@@ -143,6 +145,7 @@ install_mac_applications () {
         postman
         franz
         mactex-no-gui
+        zoomus
     )
 
     inform "Installing cask apps..."
@@ -159,7 +162,7 @@ setup_firefox_for_mac() {
     inform "Setting up firefox for mac..."
     FIREFOX_DEFAULT_PROFILE=$(ls "$HOME/Library/Application Support/Firefox/Profiles/" | grep default-release)
     mkdir -p "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome"
-    ln -s "$DOTFILES_ROOT/firefox/userChrome.css" "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome/userChrome.css"
+    ln -s "$DOTFILES_ROOTfirefox/userChrome.css" "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome/userChrome.css"
 }
 
 install_applications () {

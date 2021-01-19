@@ -127,6 +127,8 @@ install_mac_applications () {
         pyenv
         python@3.8
         pipenv
+        node
+        zsh
     )
 
     inform "Installing packages..."

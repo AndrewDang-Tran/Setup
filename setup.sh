@@ -128,7 +128,11 @@ install_mac_applications () {
         python@3.8
         pipenv
         node
+        nvm
         zsh
+        docker
+        jabba
+        yarn
     )
 
     inform "Installing packages..."
@@ -148,11 +152,12 @@ install_mac_applications () {
         franz
         mactex-no-gui
         zoomus
+        docker
     )
 
     inform "Installing cask apps..."
     inform "${CASKS[@]}..."
-    brew cask list "${CASKS[@]}" &>/dev/null || brew cask install "${CASKS[@]}"
+    brew cask list "${CASKS[@]}" &>/dev/null || brew install --cask "${CASKS[@]}"
     install_non_brew_applications
 }
 

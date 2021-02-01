@@ -118,6 +118,11 @@ install_mac_applications () {
         inform "Installing homebrew..."
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
+    
+    if test ! $(which jabba); then
+        inform "Installing jabba..."
+        curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+    fi
 
     inform "Homebrew update..."
     brew update
@@ -131,7 +136,7 @@ install_mac_applications () {
         nvm
         zsh
         docker
-        jabba
+        #jabba https://github.com/shyiko/jabba/issues/138
         yarn
     )
 

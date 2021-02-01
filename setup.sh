@@ -138,6 +138,7 @@ install_mac_applications () {
         docker
         #jabba https://github.com/shyiko/jabba/issues/138
         yarn
+        maven
     )
 
     inform "Installing packages..."

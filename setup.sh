@@ -159,6 +159,8 @@ install_mac_applications () {
         mactex-no-gui
         zoomus
         docker
+        sequel-pro
+        sqlitestudio
     )
 
     inform "Installing cask apps..."

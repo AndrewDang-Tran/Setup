@@ -161,6 +161,7 @@ install_mac_applications () {
         docker
         sequel-pro
         sqlitestudio
+        git-credential-manager-core
     )
 
     inform "Installing cask apps..."

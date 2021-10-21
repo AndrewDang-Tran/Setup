@@ -135,7 +135,7 @@ install_mac_applications () {
         node
         nvm
         zsh
-        docker
+        docker-compose
         #jabba https://github.com/shyiko/jabba/issues/138
         yarn
         maven

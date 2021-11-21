@@ -1,6 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# plain text for docker commands for debugging https://stackoverflow.com/questions/67537349/enable-progress-plain-in-docker-compose-file
+export BUILDKIT_PROGRESS=plain
+
+
 # directory moving alias
 function generateCDAliases() {
     local baseDir=$1

@@ -139,6 +139,7 @@ install_mac_applications () {
         #jabba https://github.com/shyiko/jabba/issues/138
         yarn
         maven
+        jq
     )
 
     inform "Installing packages..."

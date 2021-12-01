@@ -63,7 +63,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Formatting Shortcuts -----------------------
-com! FormatJSON %!python -m json.tool
+com! FormatJSON %!jq
 
 " Line Shortcuts -----------------------------
 

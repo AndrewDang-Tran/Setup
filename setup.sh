@@ -140,6 +140,7 @@ install_mac_applications () {
         yarn
         maven
         jq
+        tmux
     )
 
     inform "Installing packages..."
@@ -173,7 +174,11 @@ install_mac_applications () {
 
 install_non_brew_applications() {
     pip3 install pipenv
-    curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh # Install rust
+
+    if test ! $(which rustc); then
+        inform "Installing rust..."
+        curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh # Install rust
+    fi
 }
 
 setup_firefox_for_mac() {

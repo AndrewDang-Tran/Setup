@@ -184,8 +184,8 @@ install_non_brew_applications() {
 setup_firefox_for_mac() {
     inform "Setting up firefox for mac..."
     FIREFOX_DEFAULT_PROFILE=$(ls "$HOME/Library/Application Support/Firefox/Profiles/" | grep default-release)
-    mkdir -p "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome"
-    ln -s "$DOTFILES_ROOTfirefox/userChrome.css" "$HOME/library/application support/firefox/profiles/$FIREFOX_DEFAULT_PROFILE/chrome/userChrome.css"
+    mkdir -p "$HOME/Library/Application Support/Firefox/Profiles/$FIREFOX_DEFAULT_PROFILE/chrome"
+    ln -s "$DOTFILES_ROOT/firefox/userChrome.css" "$HOME/Library/Application Support/Firefox/Profiles/$FIREFOX_DEFAULT_PROFILE/chrome/userChrome.css"
 }
 
 install_applications () {

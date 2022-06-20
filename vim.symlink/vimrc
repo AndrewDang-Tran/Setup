@@ -1,10 +1,20 @@
 " Setup vim plugin manager ------------------
-call plug#begin('~/.vim/plugged')
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+call plug#begin()
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+" File search --------------------------------
+set rtp+=~/.fzf
+nnoremap <silent> <C-f> :Files<CR>
 
 " Colors -------------------------------------
 set t_Co=256
@@ -21,7 +31,7 @@ set tabstop=2
 set softtabstop=2 " number of spaces in tab
 set expandtab " tabs are spaces
 set shiftwidth=2 
-set list lcs=eol:¬,trail:·,tab:▸\ 
+set list lcs=eol:¬,trail:·,tab:▸▸▸
 autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd BufNewFile,BufRead *.twig set syntax=html
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -68,8 +78,9 @@ nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
-" Formatting Shortcuts -----------------------
+" Formatting  ---------------------------------
 com! FormatJSON %!jq
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Line Shortcuts -----------------------------
 

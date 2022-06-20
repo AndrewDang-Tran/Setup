@@ -141,6 +141,7 @@ install_mac_applications () {
         maven
         jq
         tmux
+        fzf
     )
 
     inform "Installing packages..."
@@ -157,7 +158,6 @@ install_mac_applications () {
         karabiner-elements
         intellij-idea
         postman
-        franz
         mactex-no-gui
         zoomus
         docker

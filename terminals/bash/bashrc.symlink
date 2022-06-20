@@ -155,3 +155,5 @@ alias dirvim="cd ~/.vim/"
 
 [ -s "/Users/andrew/.jabba/jabba.sh" ] && source "/Users/andrew/.jabba/jabba.sh"
 . "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

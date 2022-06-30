@@ -128,7 +128,7 @@ install_mac_applications () {
     brew update
 
     MAC_PACKAGES=(
-        vim
+        nvim
         pyenv
         python@3.8
         pipenv

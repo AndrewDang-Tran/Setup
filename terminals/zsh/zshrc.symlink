@@ -4,10 +4,13 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # plain text for docker commands for debugging https://stackoverflow.com/questions/67537349/enable-progress-plain-in-docker-compose-file
 export BUILDKIT_PROGRESS=plain
 
-# FZF
-alias vf='vim $(fzf)' # search and edit
-export FZF_DEFAULT_OPTS='--height 30% --border'  # UI for fzf
+alias vim='nvim'
 
+# FZF
+alias vf='nvim $(fzf)' # search and edit
+alias cdf='cd $(ls -d */ | fzf)'
+export FZF_DEFAULT_OPTS='--height 30% --border'  # UI for fzf
+bindkey "ç" fzf-cd-widget
 
 # Tmux
 if [ -n "$TMUX" ]; then
@@ -114,11 +117,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

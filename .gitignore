@@ -1,3 +1,7 @@
 *.swo
 *.swp
 vim.symlink/plugged/*
+config.symlink/yarn
+config.symlink/karabiner
+config.symlink/jgit
+config.symlink/configstore

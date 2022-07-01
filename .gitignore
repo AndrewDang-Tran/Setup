@@ -1,6 +1,7 @@
 *.swo
 *.swp
 vim.symlink/plugged/*
+vim.symlink/undodir
 config.symlink/yarn
 config.symlink/karabiner
 config.symlink/jgit

@@ -1,3 +1,17 @@
+" Exploration TODO:
+" lightline / statusline
+" tab autocomplete
+" vim-test plugin
+" projectionist plugin
+" harpoon plugin
+" telescope plugin
+"
+
+""""""""""""
+" GENERAL
+""""""""""""
+let mapleader=" "
+
 " Setup vim plugin manager ------------------
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -25,9 +39,10 @@ nnoremap <silent> <C-s> :FloatermToggle<CR>
 tnoremap <silent> <C-s> <C-\><C-n>:FloatermToggle<CR>
 autocmd ExitPre * :FloatermKill!
 
-" File search --------------------------------
+" File --------------------------------
 set rtp+=~/.fzf
 nnoremap <silent> <C-f> :Files<CR>
+map gf :edit <cfile><cr>
 
 " Colors -------------------------------------
 set t_Co=256
@@ -39,6 +54,8 @@ set tabstop=2
 set softtabstop=2 " number of spaces in tab
 set expandtab " tabs are spaces
 set shiftwidth=2
+vnoremap < <gv
+vnoremap > >gv
 set list lcs=eol:¬,trail:·,tab:▸▸▸
 autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd BufNewFile,BufRead *.twig set syntax=html
@@ -95,10 +112,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Leader Shortcuts ---------------------------
 cmap w!! w !sudo tee > /dev/null %
 
-" Powerline ----------------------------------
+" Statusline ----------------------------------
 
-" CtrlP --------------------------------------
-let mapleader=" "
+" Copy Paste --------------------------------------
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
@@ -106,15 +122,18 @@ vnoremap <leader>p "+p
 " Syntastic ----------------------------------
 
 " Launch Config ------------------------------
+set hidden " Control when I want to write a file
+
 
 " in insert mode, "ts" -> "2018-08-03"
 iab <expr> ts strftime("%F")
 
 " Backups ------------------------------------
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
+"set backup
+"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set backupskip=/tmp/*,/private/tmp/*
 set undodir=~/.vim/undodir
+set undofile
 set directory=.,$TEMP
 set writebackup
 

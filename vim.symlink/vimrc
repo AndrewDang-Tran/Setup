@@ -11,6 +11,8 @@
 " GENERAL
 """"""""""""
 let mapleader=" "
+nnoremap <leader>r :source ~/.vim/vimrc<cr>
+nnoremap <leader>e :e ~/.vim/vimrc<cr>
 
 " Setup vim plugin manager ------------------
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -27,9 +29,23 @@ Plug 'junegunn/fzf.vim'
 
 " LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Syntax
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
 
 " Terminal
 Plug 'voldikss/vim-floaterm'
+
+" Comments
+Plug 'tpope/vim-commentary'
+
+" Misc
 
 call plug#end()
 
@@ -47,6 +63,7 @@ map gf :edit <cfile><cr>
 " Colors -------------------------------------
 set t_Co=256
 syntax enable
+set background=dark
 colorscheme OceanicNext "install color scheme
 
 " Spaces & Tabs ------------------------------
@@ -76,13 +93,11 @@ set ruler " show cursor at all times
 set showcmd " display incomplete commands
 setl tw=180 " set max # characters in a line to 120
 
-" PHP Options --------------------------------
-"let g:php_syntax_extensions_enabled = 1
-"let b:php_syntax_extensions_enabled = 1
-
 " Searching ----------------------------------
 set incsearch "search as characters are entered
 set hlsearch
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " Deleting -----------------------------------
 set backspace=indent,eol,start
@@ -123,7 +138,6 @@ vnoremap <leader>p "+p
 
 " Launch Config ------------------------------
 set hidden " Control when I want to write a file
-
 
 " in insert mode, "ts" -> "2018-08-03"
 iab <expr> ts strftime("%F")

@@ -17,7 +17,7 @@ success () {
 }
 
 fail () {
-    printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+    printf "\r\033[2K  [ \033[0;31mFAIL\033[0m ] $1\n"
     echo ''
     exit
 }
@@ -141,6 +141,7 @@ install_mac_applications () {
         maven
         jq
         tmux
+        fd
         fzf
     )
 
@@ -163,7 +164,7 @@ install_mac_applications () {
         docker
         sequel-pro
         sqlitestudio
-        git-credential-manager-core
+        git-credential-manager
     )
 
     inform "Installing cask apps..."

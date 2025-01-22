@@ -13,6 +13,10 @@
 let mapleader=" "
 nnoremap <leader>r :source ~/.vim/vimrc<cr>
 nnoremap <leader>e :e ~/.vim/vimrc<cr>
+nnoremap <leader>ze :e ~/.zshrc<cr>
+nnoremap <leader>zr :source ~/.zshrc<cr>
+nnoremap <leader>te :e ~/.tmux.conf<cr>
+nnoremap <leader>tr :tmux source-file ~/.tmux.conf<cr>
 
 " Setup vim plugin manager ------------------
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -123,7 +127,7 @@ com! FormatJSON %!jq
 " will add comma to end of line if it doesn't exist
 " I used the vim negative look behind documented at
 " https://vim.fandom.com/wiki/Regex_lookahead_and_lookbehind
-vmap , :s/\(,\)\@<!$/,/g<CR>
+vmap , :s/\(,\)\@<!$/,/g<CR>:let @/ = ""<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Line Shortcuts -----------------------------

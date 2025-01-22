@@ -5,6 +5,10 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export BUILDKIT_PROGRESS=plain
 
 alias vim='nvim'
+alias check0='$0'
+alias recipes="obsidian-cli list-notes --tags=recipe"
+alias random="awk 'BEGIN { srand() } int(rand() * NR) == 0 { x = \$0 } END { print x }'"
+alias random-recipe='recipes | random'
 
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'  # UI for fzf

@@ -64,7 +64,7 @@ alias mac-screensaver='/System/Library/Frameworks/ScreenSaver.framework/Resource
 alias mac-suspend='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/andrew/.oh-my-zsh
+export ZSH=/Users/andrewdt/.oh-my-zsh
 
 # Add path to apache-ant
 PATH=$PATH:/usr/local/apache-ant-1.10.1/bin
@@ -139,5 +139,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$PATH:$HOME/bin
 
-[ -s "/Users/andrew/.jabba/jabba.sh" ] && source "/Users/andrew/.jabba/jabba.sh"
+[ -s "/Users/andrewdt/.jabba/jabba.sh" ] && source "/Users/andrewdt/.jabba/jabba.sh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

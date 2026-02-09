@@ -111,12 +111,18 @@ install_dotfiles () {
 
 install_mac_applications () {
     if test ! $(which zsh); then
+        inform "Installing oh-my-zsh..."
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    fi
+
+    if test ! $(which zsh); then
         inform "Installing zsh..."
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
+
     if test ! $(which brew); then
         inform "Installing homebrew..."
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 
     if test ! $(which jabba); then
@@ -130,7 +136,7 @@ install_mac_applications () {
     MAC_PACKAGES=(
         nvim
         pyenv
-        python@3.8
+        python@3.14
         pipenv
         node
         nvm
@@ -149,22 +155,21 @@ install_mac_applications () {
     brew list "${MAC_PACKAGES[@]}" &>/dev/null || brew install "${MAC_PACKAGES[@]}"
 
     CASKS=(
-        spectacle
+        rectangle
         alfred
         firefox
         iterm2
         anki
-        notion
+        obsidian
         flux
         karabiner-elements
-        intellij-idea
-        postman
         mactex-no-gui
-        zoomus
+        discord
         docker
-        sequel-pro
         sqlitestudio
         git-credential-manager
+        todoist-app
+        godot
     )
 
     inform "Installing cask apps..."
@@ -186,7 +191,7 @@ setup_firefox_for_mac() {
     inform "Setting up firefox for mac..."
     FIREFOX_DEFAULT_PROFILE=$(ls "$HOME/Library/Application Support/Firefox/Profiles/" | grep default-release)
     mkdir -p "$HOME/Library/Application Support/Firefox/Profiles/$FIREFOX_DEFAULT_PROFILE/chrome"
-    ln -s "$DOTFILES_ROOT/firefox/userChrome.css" "$HOME/Library/Application Support/Firefox/Profiles/$FIREFOX_DEFAULT_PROFILE/chrome/userChrome.css"
+    ln -sf "$DOTFILES_ROOT/firefox/userChrome.css" "$HOME/Library/Application Support/Firefox/Profiles/$FIREFOX_DEFAULT_PROFILE/chrome/userChrome.css"
 }
 
 install_applications () {

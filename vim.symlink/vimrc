@@ -153,7 +153,7 @@ iab <expr> ts strftime("%F")
 "set backup
 "set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 "set backupskip=/tmp/*,/private/tmp/*
-set ndodir=~/.vim/undodir
+set undodir=~/.vim/undodir
 set undofile
 set directory=.,$TEMP
 set writebackup

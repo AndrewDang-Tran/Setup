@@ -149,6 +149,7 @@ install_mac_applications () {
         tmux
         fd
         fzf
+        pelican
     )
 
     inform "Installing packages..."
@@ -170,6 +171,7 @@ install_mac_applications () {
         git-credential-manager
         todoist-app
         godot
+        krita
     )
 
     inform "Installing cask apps..."

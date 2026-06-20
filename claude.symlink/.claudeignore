@@ -1,0 +1,82 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+vendor/
+
+# Build output
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.svelte-kit/
+target/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+
+# Package manager lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Gemfile.lock
+Cargo.lock
+poetry.lock
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache
+.cache/
+.parcel-cache/
+.turbo/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+.nyc_output/
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Godot
+.godot/
+.import/
+*.import
+*.uid
+
+# Binary / media
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.pdf
+*.zip
+*.tar.gz
+*.wasm

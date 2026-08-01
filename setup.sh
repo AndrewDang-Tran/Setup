@@ -151,6 +151,8 @@ install_mac_applications () {
         fzf
         pelican
         gh
+        gdtoolkit
+        rclone
     )
 
     inform "Installing packages..."
@@ -171,7 +173,6 @@ install_mac_applications () {
         sqlitestudio
         git-credential-manager
         todoist-app
-        godot
         krita
         claude-code
     )
@@ -188,6 +189,17 @@ install_non_brew_applications() {
     if test ! $(which rustc); then
         inform "Installing rust..."
         curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh # Install rust
+    fi
+
+    if [ ! -d "/Applications/Godot.app" ]; then
+        inform "Installing Godot 4.7..."
+        curl -L "https://github.com/godotengine/godot/releases/download/4.7-stable/Godot_v4.7-stable_macos.universal.zip" -o /tmp/godot.zip
+        unzip -q /tmp/godot.zip -d /tmp/godot_install
+        mv /tmp/godot_install/Godot.app /Applications/
+        rm -rf /tmp/godot.zip /tmp/godot_install
+        success "Godot 4.6 installed"
+    else
+        inform "Godot already installed, skipping (locked to 4.7)"
     fi
 
     inform "Installing claude-superskills..."

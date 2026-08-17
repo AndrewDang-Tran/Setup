@@ -56,6 +56,8 @@ Search the internet for what options are available. The goal is to find what kno
 - "Hidden gem" options that specialist communities favor over mainstream picks
 - Items with strong long-term ownership reports, not just first-impression reviews
 
+**When a page blocks fetching (403, paywalled, or incomplete data):** Tell the user which URL you need and what information you're trying to get from it. They can load it manually and paste the raw HTML or text. Accept whatever they paste and extract the needed data from it.
+
 ---
 
 ### Phase 3: Present Options Table
@@ -68,6 +70,8 @@ Once research is complete, present options in a table. Columns should be:
 4. **Notes** (anything that doesn't fit neatly in a column — caveats, "best for X type of buyer", etc.)
 
 Every item in the table must have a link. Prefer the manufacturer's product page; fall back to the most reputable retailer if no official page exists. Always link to a singular item page, not a category, search results page, or multi-item listing.
+
+**eBay links:** Always link to a specific item listing (e.g. `ebay.com/itm/123456789`), never to aggregated product pages (e.g. `ebay.com/p/...`) or search results. Aggregated pages do not link to a buyable listing and will not work for the user. If you cannot find a direct `/itm/` listing URL, do not include the eBay link.
 
 Use a simple rating system per dimension: ✓ (good), ~ (acceptable), ✗ (weak), or a short phrase if binary doesn't capture it.
 

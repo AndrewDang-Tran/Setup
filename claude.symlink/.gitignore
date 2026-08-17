@@ -8,3 +8,7 @@ session-env/
 sessions/
 shell-snapshots/
 tasks/
+.last-cleanup
+mcp-needs-auth-cache.json
+paste-cache/
+telemetry/
